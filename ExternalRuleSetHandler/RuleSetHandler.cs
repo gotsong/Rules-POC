@@ -9,35 +9,48 @@ namespace ExternalRuleSetHandler
     public class RuleSetHandler
     {
         private string _ruleSetName;
-        private RuleSet _ruleSet;
 
         public void LoadRuleSet(string ruleSetName)
         {
-            var serializer = new WorkflowMarkupSerializer();
             if (string.IsNullOrEmpty(ruleSetName))
                 throw new Exception("Ruleset name cannot be null or empty.");
-            if (!string.Equals(RuleSetName, ruleSetName))
+            if (!string.Equals(_ruleSetName, ruleSetName))
             {
                 _ruleSetName = ruleSetName;
 
                 var ruleService = new ExternalRuleSetService();
-                var ruleSet = ruleService.GetRuleSet(new RuleSetInfo(ruleSetName));
-                if (ruleSet == null)
+                 RuleSet = ruleService.GetRuleSet(new RuleSetInfo(ruleSetName));
+                if (RuleSet == null)
                 {
-                    throw new Exception("RuleSet could not be loaded. Make sure the connection string and ruleset name are correct.");
+                    throw new Exception(
+                        "RuleSet could not be loaded. Make sure the connection string and ruleset name are correct.");
                 }
             }
         }
 
-        public string RuleSetName
+        public RuleSet RuleSet { get; private set; }
+
+        public void ExecuteRuleSet(Type targetType)
         {
-            get { return _ruleSetName; }
-            set { _ruleSetName = value; }
+            if (RuleSet != null)
+            {                
+                var validator = new RuleSetValidation(targetType, RuleSet);
+                var ruleExecution = validator.ValidateRuleSet(targetType);
+                ExecuteRule(ruleExecution);
+            }
+
         }
 
-        public RuleSet RuleSet
+        private void ExecuteRule(RuleExecution ruleExecution)
         {
-            get { return _ruleSet; }
+            if (null != ruleExecution)
+            {
+                RuleSet.Execute(ruleExecution);
+            }
+            else
+            {
+                throw new Exception("RuleExecution is null.");
+            }
         }
     }
 }

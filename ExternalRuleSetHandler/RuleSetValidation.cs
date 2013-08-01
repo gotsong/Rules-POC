@@ -8,18 +8,19 @@ namespace ExternalRuleSetHandler
     public class RuleSetValidation
     {
         private Type _targetType;
+        private RuleSet _ruleSet;
 
-        public RuleSetValidation(Type targetType)
+        public RuleSetValidation(Type targetType,RuleSet ruleSet)
         {
             _targetType = targetType;
         }
 
-        private RuleExecution ValidateRuleSet(object targetObject)
+        public RuleExecution ValidateRuleSet(Type targetType)
         {
-            RuleValidation ruleValidation;
+            _targetType = targetType;
 
-            ruleValidation = new RuleValidation(_targetType, null);
-            if (!ruleSet.Validate(ruleValidation))
+            RuleValidation ruleValidation = new RuleValidation(_targetType, null);
+            if (!_ruleSet.Validate(ruleValidation))
             {
                 string errors = "";
                 foreach (ValidationError validationError in ruleValidation.Errors)
@@ -29,7 +30,7 @@ namespace ExternalRuleSetHandler
             }
             else
             {
-                return new RuleExecution(ruleValidation, targetObject);
+                return new RuleExecution(ruleValidation, _targetType);
             }
         }         
     }

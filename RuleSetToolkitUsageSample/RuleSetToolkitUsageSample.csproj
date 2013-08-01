@@ -120,10 +120,6 @@
       <Project>{39062704-7861-4352-A86D-57F85F6A8AC5}</Project>
       <Name>ExternalRuleSetService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PolicyFromServiceActivity\PolicyFromServiceActivity.csproj">
-      <Project>{AEA39831-19FC-4E43-8DAE-663EF515DEAC}</Project>
-      <Name>PolicyFromServiceActivity</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <Import Project="$(MSBuildToolsPath)\Workflow.Targets" />
