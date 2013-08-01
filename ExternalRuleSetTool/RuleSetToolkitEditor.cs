@@ -17,9 +17,9 @@ using System.Workflow.Activities.Rules;
 using System.Workflow.Activities.Rules.Design;
 using System.Workflow.ComponentModel.Serialization;
 using System.Xml;
-using Microsoft.Samples.Rules.ExternalRuleSetLibrary;
+using Rules.ExternalRuleSetLibrary;
 
-namespace Microsoft.Samples.Rules.ExternalRuleSetToolkit
+namespace Rules.ExternalRuleSetToolkit
 {
     public partial class RuleSetToolkitEditor : Form
     {

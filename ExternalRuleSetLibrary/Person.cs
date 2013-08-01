@@ -1,10 +1,14 @@
-﻿namespace Microsoft.Samples.Rules.ExternalRuleSetLibrary
+﻿namespace Rules.ExternalRuleSetLibrary
 {
     public enum Gender{Male,Female}
 
-    public class People
+    public class Person
     {
-        public People(string firstName, string lastName, string middleName, Gender gender, bool hasPet,bool isSingle)
+        public Person()
+        {
+        }
+
+        public Person(string firstName, string lastName, string middleName, Gender gender, bool hasPet,bool isSingle)
         {
             FirstName = firstName;
             LastName = lastName;

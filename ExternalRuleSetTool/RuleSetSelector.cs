@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Forms;
-using Microsoft.Samples.Rules.ExternalRuleSetLibrary;
+using Rules.ExternalRuleSetLibrary;
 
-namespace Microsoft.Samples.Rules.ExternalRuleSetToolkit
+namespace Rules.ExternalRuleSetToolkit
 {
     internal partial class RuleSetSelector : Form
     {

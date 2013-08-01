@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>FactoryGirl.NET</id>
+    <version>1.0.0.0</version>
+    <title>FactoryGirl.NET</title>
+    <authors>James Kovacs</authors>
+    <owners>James Kovacs</owners>
+    <licenseUrl>https://github.com/JamesKovacs/FactoryGirl.NET/license.txt</licenseUrl>
+    <projectUrl>https://github.com/JamesKovacs/FactoryGirl.NET</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A minimal .NET implementation of Thoughtbot's factory_girl for Ruby. If you are familiar, we only support defining factories and building objects using those factories. We do not support create (e.g. saving to the database), attributes_for, or build_stubbed yet.</description>
+    <releaseNotes>Support for defining factories and building objects using those factories.</releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <language />
+    <tags>factorygirl ruby objectmother</tags>
+  </metadata>
+</package>

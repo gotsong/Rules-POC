@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using System.Workflow.Activities.Rules;
 
-namespace Microsoft.Samples.Rules.ExternalRuleSetToolkit
+namespace Rules.ExternalRuleSetToolkit
 {
     internal partial class ActivitySelector : Form
     {

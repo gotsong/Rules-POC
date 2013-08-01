@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Workflow.Activities.Rules;
 using System.Workflow.ComponentModel.Compiler;
 
-namespace ExternalRuleSetHandler
+namespace Rules.ExternalRuleSetHandler
 {
     public class RuleSetValidation
     {

@@ -1,8 +1,10 @@
-﻿namespace Microsoft.Samples.Rules.ExternalRuleSetLibrary
+﻿namespace Rules.ExternalRuleSetLibrary
 {
-    public class Pets
+    public class Pet
     {
-        public Pets(string firstName, string lastName, Gender gender, bool hasOwner, FoodType food, PetType petType)
+        public Pet(){}
+
+        public Pet(string firstName, string lastName, Gender gender, bool hasOwner, FoodType food, PetType petType)
         {
             FirstName = firstName;
             LastName = lastName;

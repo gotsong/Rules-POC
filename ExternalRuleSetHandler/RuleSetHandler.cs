@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Workflow.Activities.Rules;
-using System.Workflow.ComponentModel.Serialization;
-using Microsoft.Samples.Rules.ExternalRuleSetLibrary;
-using Microsoft.Samples.Rules.ExternalRuleSetService;
+using Rules.ExternalRuleSetLibrary;
 
-namespace ExternalRuleSetHandler
+namespace Rules.ExternalRuleSetHandler
 {
     public class RuleSetHandler
     {
@@ -18,7 +16,7 @@ namespace ExternalRuleSetHandler
             {
                 _ruleSetName = ruleSetName;
 
-                var ruleService = new ExternalRuleSetService();
+                var ruleService = new ExternalRuleSetService.ExternalRuleSetService();
                  RuleSet = ruleService.GetRuleSet(new RuleSetInfo(ruleSetName));
                 if (RuleSet == null)
                 {

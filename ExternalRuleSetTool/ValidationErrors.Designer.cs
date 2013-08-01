@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 //----------------------------------------------------------------
 
-namespace Microsoft.Samples.Rules.ExternalRuleSetToolkit
+namespace Rules.ExternalRuleSetToolkit
 {
     partial class ValidationErrorsForm
     {

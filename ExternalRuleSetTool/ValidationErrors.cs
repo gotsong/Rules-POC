@@ -6,7 +6,7 @@ using System;
 using System.Windows.Forms;
 using System.Workflow.ComponentModel.Compiler;
 
-namespace Microsoft.Samples.Rules.ExternalRuleSetToolkit
+namespace Rules.ExternalRuleSetToolkit
 {
     internal partial class ValidationErrorsForm : Form
     {

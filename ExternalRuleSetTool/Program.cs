@@ -5,7 +5,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Microsoft.Samples.Rules.ExternalRuleSetToolkit
+namespace Rules.ExternalRuleSetToolkit
 {
     static class Program
     {

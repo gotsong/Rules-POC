@@ -9,9 +9,9 @@ using System.Globalization;
 using System.Windows.Forms;
 using System.Workflow.Activities.Rules;
 using System.Workflow.Runtime.Hosting;
-using Microsoft.Samples.Rules.ExternalRuleSetLibrary;
+using Rules.ExternalRuleSetLibrary;
 
-namespace Microsoft.Samples.Rules.ExternalRuleSetService
+namespace Rules.ExternalRuleSetService
 {
     public class ExternalRuleSetService : WorkflowRuntimeService
     {

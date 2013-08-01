@@ -8,8 +8,8 @@
     <ProjectGuid>{39062704-7861-4352-A86D-57F85F6A8AC5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Rules.Samples.ExternalRuleSetService</RootNamespace>
-    <AssemblyName>Microsoft.Rules.Samples.ExternalRuleSetService</AssemblyName>
+    <RootNamespace>Rules.ExternalRuleSetService</RootNamespace>
+    <AssemblyName>Rules.ExternalRuleSetService</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
