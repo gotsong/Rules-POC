@@ -7,19 +7,20 @@ namespace Rules.ExternalRuleSetHandler
 {
     public class RuleSetValidation
     {
-        private Type _targetType;
+        private object _targetType;
         private RuleSet _ruleSet;
 
-        public RuleSetValidation(Type targetType,RuleSet ruleSet)
+        public RuleSetValidation(object targetType, RuleSet ruleSet)
         {
+            _ruleSet = ruleSet;
             _targetType = targetType;
         }
 
-        public RuleExecution ValidateRuleSet(Type targetType)
+        public RuleExecution ValidateRuleSet(object targetType)
         {
             _targetType = targetType;
 
-            RuleValidation ruleValidation = new RuleValidation(_targetType, null);
+            RuleValidation ruleValidation = new RuleValidation(_targetType.GetType(), null);
             if (!_ruleSet.Validate(ruleValidation))
             {
                 string errors = "";

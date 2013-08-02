@@ -8,7 +8,7 @@ namespace Rules.ExternalRuleSetHandler
     {
         private string _ruleSetName;
 
-        public void LoadRuleSet(string ruleSetName)
+        private void LoadRuleSet(string ruleSetName)
         {
             if (string.IsNullOrEmpty(ruleSetName))
                 throw new Exception("Ruleset name cannot be null or empty.");
@@ -28,8 +28,10 @@ namespace Rules.ExternalRuleSetHandler
 
         public RuleSet RuleSet { get; private set; }
 
-        public void ExecuteRuleSet(Type targetType)
+        public void ExecuteRuleSet(string ruleSetName, object targetType)
         {
+            LoadRuleSet(ruleSetName);
+
             if (RuleSet != null)
             {                
                 var validator = new RuleSetValidation(targetType, RuleSet);

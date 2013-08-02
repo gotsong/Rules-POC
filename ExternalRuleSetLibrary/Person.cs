@@ -1,4 +1,7 @@
-﻿namespace Rules.ExternalRuleSetLibrary
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace Rules.ExternalRuleSetLibrary
 {
     public enum Gender{Male,Female}
 
