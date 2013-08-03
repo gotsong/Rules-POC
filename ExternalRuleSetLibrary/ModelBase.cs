@@ -4,11 +4,13 @@ using System.Collections.Generic;
 
 namespace Rules.ExternalRuleSetLibrary
 {
-    public class ModelBase<T>:IComparable<T>
+    public abstract class ModelBase<T>:IComparable<T>
     {
+        public List<string> _messages = new List<string>();
+
         private RuleSetHandler _handler;
 
-        public ModelBase(RuleSetHandler handler)
+        protected ModelBase(RuleSetHandler handler)
         {
             _handler = handler;
         }
@@ -18,9 +20,6 @@ namespace Rules.ExternalRuleSetLibrary
             _handler.ExecuteRuleSet(this);
         }
 
-        public int CompareTo(T other)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract int CompareTo(T other);
     }
 }

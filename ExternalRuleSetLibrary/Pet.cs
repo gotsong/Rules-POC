@@ -1,4 +1,5 @@
-﻿using Rules.ExternalRuleSetHandler;
+﻿using System.Globalization;
+using Rules.ExternalRuleSetHandler;
 
 namespace Rules.ExternalRuleSetLibrary
 {
@@ -48,5 +49,17 @@ namespace Rules.ExternalRuleSetLibrary
         public FoodType Food { get; set; }
 
         public PetType TPetType { get; set; }
+
+        public override int CompareTo(Pet other)
+        {
+            if (other.FirstName != FirstName) _messages.Add("FirstName has changed to " + FirstName);
+            if (other.LastName != LastName) _messages.Add("LastName has changed to " + LastName);
+            if (other.Gender != Gender) _messages.Add("Gender has changed to " + Gender.ToString());
+            if (other.HasOwner != HasOwner) _messages.Add("HasOwner has changed to " + HasOwner.ToString(CultureInfo.InvariantCulture));
+            if (other.Food != Food) _messages.Add("Food has changed to " + Food);
+            if (other.TPetType != TPetType) _messages.Add("PetType has changed to " + TPetType);
+
+            return 0;
+        }
     }
 }

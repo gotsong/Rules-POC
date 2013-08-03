@@ -21,12 +21,17 @@ namespace Rules.ExternalRuleSetTestClient
         private void Run()
         {       
             
-            GenerateFakes(10);            
+            GenerateFakes(10);
+
+            Person previousPerson = null;
+            Pet previousPet = null;
 
             //Run Rules against a fake collection of People
             foreach(var person in _persons)
-            {
+            {                
                 person.ExecuteRules();
+                if (previousPerson != null) person.CompareTo(previousPerson);
+                previousPerson = person;
             }
 
             //Run Rules against a fake collection of Pets
