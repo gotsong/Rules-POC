@@ -65,12 +65,8 @@
   <ItemGroup>
     <Compile Include="ExternalRuleSetService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ExternalRuleSetLibrary\ExternalRuleSetLibrary.csproj">
-      <Project>{04D3CAD9-7CFC-4ED1-971A-15526CEF6C00}</Project>
-      <Name>ExternalRuleSetLibrary</Name>
-    </ProjectReference>
+    <Compile Include="RuleSetData.cs" />
+    <Compile Include="RuleSetInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

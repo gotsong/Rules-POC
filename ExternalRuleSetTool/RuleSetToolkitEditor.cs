@@ -18,6 +18,7 @@ using System.Workflow.Activities.Rules.Design;
 using System.Workflow.ComponentModel.Serialization;
 using System.Xml;
 using Rules.ExternalRuleSetLibrary;
+using Rules.ExternalRuleSetService;
 
 namespace Rules.ExternalRuleSetToolkit
 {

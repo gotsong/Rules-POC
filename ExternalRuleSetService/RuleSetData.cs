@@ -9,7 +9,7 @@ using System.Workflow.Activities.Rules;
 using System.Workflow.ComponentModel.Serialization;
 using System.Xml;
 
-namespace Rules.ExternalRuleSetLibrary
+namespace Rules.ExternalRuleSetService
 {
     public class RuleSetData : IComparable<RuleSetData>
     {

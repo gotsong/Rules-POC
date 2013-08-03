@@ -134,6 +134,10 @@
       <Project>{04D3CAD9-7CFC-4ED1-971A-15526CEF6C00}</Project>
       <Name>ExternalRuleSetLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ExternalRuleSetService\ExternalRuleSetService.csproj">
+      <Project>{39062704-7861-4352-A86D-57F85F6A8AC5}</Project>
+      <Name>ExternalRuleSetService</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

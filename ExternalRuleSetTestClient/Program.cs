@@ -19,21 +19,20 @@ namespace Rules.ExternalRuleSetTestClient
         }
 
         private void Run()
-        {
-            var handler = new RuleSetHandler();            
+        {       
             
-            GenerateFakes(10);
+            GenerateFakes(10);            
 
             //Run Rules against a fake collection of People
             foreach(var person in _persons)
             {
-                handler.ExecuteRuleSet("People", person);
+                person.ExecuteRules();
             }
 
             //Run Rules against a fake collection of Pets
             foreach (var pet in _pets)
             {
-                handler.ExecuteRuleSet("Pets", pet);
+                pet.ExecuteRules();
             }
         }
 

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Forms;
 using Rules.ExternalRuleSetLibrary;
+using Rules.ExternalRuleSetService;
 
 namespace Rules.ExternalRuleSetToolkit
 {

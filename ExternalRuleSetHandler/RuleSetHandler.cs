@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Workflow.Activities.Rules;
-using Rules.ExternalRuleSetLibrary;
+using Rules.ExternalRuleSetService;
+
 
 namespace Rules.ExternalRuleSetHandler
 {
     public class RuleSetHandler
     {
         private string _ruleSetName;
+
+        public RuleSetHandler(string ruleSetName)
+        {
+            LoadRuleSet(ruleSetName);
+        }
 
         private void LoadRuleSet(string ruleSetName)
         {
@@ -28,10 +34,8 @@ namespace Rules.ExternalRuleSetHandler
 
         public RuleSet RuleSet { get; private set; }
 
-        public void ExecuteRuleSet(string ruleSetName, object targetType)
-        {
-            LoadRuleSet(ruleSetName);
-
+        public void ExecuteRuleSet(object targetType)
+        {            
             if (RuleSet != null)
             {                
                 var validator = new RuleSetValidation(targetType, RuleSet);
@@ -46,6 +50,7 @@ namespace Rules.ExternalRuleSetHandler
             if (null != ruleExecution)
             {
                 RuleSet.Execute(ruleExecution);
+                
             }
             else
             {

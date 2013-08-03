@@ -1,10 +1,14 @@
-﻿namespace Rules.ExternalRuleSetLibrary
+﻿using Rules.ExternalRuleSetHandler;
+
+namespace Rules.ExternalRuleSetLibrary
 {
-    public class Pet
+    public class Pet:ModelBase<Pet>
     {
-        public Pet(){}
+        public Pet() : base(new RuleSetHandler("Pets")) 
+        { }
 
         public Pet(string firstName, string lastName, Gender gender, bool hasOwner, FoodType food, PetType petType)
+                : base(new RuleSetHandler("Pets"))
         {
             FirstName = firstName;
             LastName = lastName;

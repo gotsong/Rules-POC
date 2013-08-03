@@ -5,7 +5,7 @@
 using System;
 using System.Globalization;
 
-namespace Rules.ExternalRuleSetLibrary
+namespace Rules.ExternalRuleSetService
 {
     public class RuleSetInfo : IComparable<RuleSetInfo>
     {

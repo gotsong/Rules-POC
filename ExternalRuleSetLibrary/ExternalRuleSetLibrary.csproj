@@ -56,14 +56,14 @@
     <Reference Include="System" />
     <Reference Include="System.Workflow.Activities" />
     <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelBase.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Pet.cs" />
-    <Compile Include="RuleSetInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RuleSetData.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -86,6 +86,16 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExternalRuleSetHandler\ExternalRuleSetHandler.csproj">
+      <Project>{CEFDAFBC-2C23-4978-9B90-7A60A6705D85}</Project>
+      <Name>ExternalRuleSetHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExternalRuleSetService\ExternalRuleSetService.csproj">
+      <Project>{39062704-7861-4352-A86D-57F85F6A8AC5}</Project>
+      <Name>ExternalRuleSetService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
