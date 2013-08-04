@@ -11,6 +11,7 @@ namespace Rules.ExternalRuleSetLibrary
     {        
         public Person():base("People")
         {
+
         }
 
         public Person(string firstName, string lastName, string middleName, Gender gender, bool hasPet, bool isSingle)

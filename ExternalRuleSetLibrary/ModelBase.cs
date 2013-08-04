@@ -4,14 +4,15 @@ using System.Collections.Generic;
 
 namespace Rules.ExternalRuleSetLibrary
 {
-    public abstract class ModelBase<T>:IComparable<T>
+    public abstract class ModelBase<T>:IComparable<T> where T : new()
     {
         public List<string> _messages = new List<string>();
 
-        //private RuleSetHandler _handler;
+        public T ModelOriginal { get; set; }
 
         protected ModelBase(string ruleSetName)
         {
+//            ModelOriginal = new T();
             RuleSetHandler.LoadRuleSet(ruleSetName);
         }
 
