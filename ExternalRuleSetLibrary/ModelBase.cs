@@ -12,7 +12,6 @@ namespace Rules.ExternalRuleSetLibrary
 
         protected ModelBase(string ruleSetName)
         {
-//            ModelOriginal = new T();
             RuleSetHandler.LoadRuleSet(ruleSetName);
         }
 

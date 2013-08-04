@@ -35,7 +35,8 @@ namespace Rules.ExternalRuleSetLibrary
             Dogfood,
             Catfood,
             Birdseed,
-            Fishfood
+            Fishfood,
+            Guineapigfood
         }
 
         public string FirstName { get; set; }

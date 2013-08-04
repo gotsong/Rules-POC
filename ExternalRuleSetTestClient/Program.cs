@@ -36,7 +36,7 @@ namespace Rules.ExternalRuleSetTestClient
                                                HasPet = person.HasPet,
                                                IsSingle = person.IsSingle                                               
                                            };
-                person.ModelOriginal = person;
+
                 person.ExecuteRules();
                 person.CompareTo(person.ModelOriginal);
 
@@ -45,7 +45,9 @@ namespace Rules.ExternalRuleSetTestClient
                     Console.WriteLine("Rule changes occured for person {0} {1}",person.FirstName,person.LastName);
                     foreach(var msg in person._messages)
                     {
+                        Console.WriteLine("===============================================================================");
                         Console.WriteLine(msg);
+                        Console.WriteLine("===============================================================================");
                     }
                 }
             }
@@ -54,20 +56,32 @@ namespace Rules.ExternalRuleSetTestClient
             //Run Rules against a fake collection of Pets
             foreach (var pet in _pets)
             {
-                pet.ModelOriginal = new Pet();
-                pet.ModelOriginal = pet;
+                pet.ModelOriginal = new Pet
+                                        {
+                                            FirstName = pet.FirstName,
+                                            LastName = pet.LastName,
+                                            TPetType = pet.TPetType,
+                                            Gender = pet.Gender,
+                                            HasOwner = pet.HasOwner,
+                                            Food = pet.Food
+                                        };
                 pet.ExecuteRules();
                 pet.CompareTo(pet.ModelOriginal);
 
                 if (pet._messages.Count > 0)
                 {
-                    Console.WriteLine("Rule changes occured for pet {0} {1}", pet.FirstName, pet.LastName);
+                    Console.WriteLine("Rule changes occured for pet {0} {1} of type {2}", pet.FirstName, pet.LastName,pet.TPetType.ToString());
+
                     foreach (var msg in pet._messages)
                     {
+                        Console.WriteLine("===============================================================================");
                         Console.WriteLine(msg);
+                        Console.WriteLine("===============================================================================");
                     }
                 }
             }
+
+            Console.ReadLine();
         }
 
         private void GeneratePersonFakes(int count)
