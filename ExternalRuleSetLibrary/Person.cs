@@ -9,12 +9,12 @@ namespace Rules.ExternalRuleSetLibrary
 
     public class Person:ModelBase<Person>
     {        
-        public Person():base(new RuleSetHandler("People"))
+        public Person():base("People")
         {
         }
 
         public Person(string firstName, string lastName, string middleName, Gender gender, bool hasPet, bool isSingle)
-            : base(new RuleSetHandler("People"))
+            : base("People")
         {
             FirstName = firstName;
             LastName = lastName;

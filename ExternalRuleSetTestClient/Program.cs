@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Rules.ExternalRuleSetHandler;
 using Rules.ExternalRuleSetLibrary;
 using FactoryGirl.NET;
@@ -32,12 +33,32 @@ namespace Rules.ExternalRuleSetTestClient
                 person.ExecuteRules();
                 if (previousPerson != null) person.CompareTo(previousPerson);
                 previousPerson = person;
+
+                if(person._messages.Count > 0)
+                {
+                    Console.WriteLine("Rule changes occured for person {0} {1}",person.FirstName,person.LastName);
+                    foreach(var msg in person._messages)
+                    {
+                        Console.WriteLine(msg);
+                    }
+                }
             }
 
             //Run Rules against a fake collection of Pets
             foreach (var pet in _pets)
             {
                 pet.ExecuteRules();
+                if (previousPet != null) pet.CompareTo(previousPet);
+                previousPet = pet;
+
+                if (pet._messages.Count > 0)
+                {
+                    Console.WriteLine("Rule changes occured for pet {0} {1}", pet.FirstName, pet.LastName);
+                    foreach (var msg in pet._messages)
+                    {
+                        Console.WriteLine(msg);
+                    }
+                }
             }
         }
 

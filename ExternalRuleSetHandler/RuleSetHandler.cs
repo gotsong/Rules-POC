@@ -7,14 +7,15 @@ namespace Rules.ExternalRuleSetHandler
 {
     public class RuleSetHandler
     {
-        private string _ruleSetName;
+        public static string RuleSetName { get; set; }
 
-        public RuleSetHandler(string ruleSetName)
-        {
-            LoadRuleSet(ruleSetName);
-        }
+        private static string _ruleSetName { get; set; }
+//        public RuleSetHandler(string ruleSetName)
+//        {
+//            LoadRuleSet(ruleSetName);
+//        }
 
-        private void LoadRuleSet(string ruleSetName)
+        public static void LoadRuleSet(string ruleSetName)
         {
             if (string.IsNullOrEmpty(ruleSetName))
                 throw new Exception("Ruleset name cannot be null or empty.");
@@ -22,6 +23,7 @@ namespace Rules.ExternalRuleSetHandler
             {
                 _ruleSetName = ruleSetName;
 
+                //TODO: Needs refactoring into a rule cache to minimize database traffic for production
                 var ruleService = new ExternalRuleSetService.ExternalRuleSetService();
                  RuleSet = ruleService.GetRuleSet(new RuleSetInfo(ruleSetName));
                 if (RuleSet == null)
@@ -32,9 +34,9 @@ namespace Rules.ExternalRuleSetHandler
             }
         }
 
-        public RuleSet RuleSet { get; private set; }
+        public static RuleSet RuleSet { get; private set; }
 
-        public void ExecuteRuleSet(object targetType)
+        public static void ExecuteRuleSet(object targetType)
         {            
             if (RuleSet != null)
             {                
@@ -45,7 +47,7 @@ namespace Rules.ExternalRuleSetHandler
 
         }
 
-        private void ExecuteRule(RuleExecution ruleExecution)
+        private static void ExecuteRule(RuleExecution ruleExecution)
         {
             if (null != ruleExecution)
             {

@@ -8,16 +8,16 @@ namespace Rules.ExternalRuleSetLibrary
     {
         public List<string> _messages = new List<string>();
 
-        private RuleSetHandler _handler;
+        //private RuleSetHandler _handler;
 
-        protected ModelBase(RuleSetHandler handler)
+        protected ModelBase(string ruleSetName)
         {
-            _handler = handler;
+            RuleSetHandler.LoadRuleSet(ruleSetName);
         }
 
         public void ExecuteRules()
         {
-            _handler.ExecuteRuleSet(this);
+            RuleSetHandler.ExecuteRuleSet(this);
         }
 
         public abstract int CompareTo(T other);

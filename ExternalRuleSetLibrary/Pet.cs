@@ -5,11 +5,11 @@ namespace Rules.ExternalRuleSetLibrary
 {
     public class Pet:ModelBase<Pet>
     {
-        public Pet() : base(new RuleSetHandler("Pets")) 
+        public Pet() : base("Pets") 
         { }
 
         public Pet(string firstName, string lastName, Gender gender, bool hasOwner, FoodType food, PetType petType)
-                : base(new RuleSetHandler("Pets"))
+                : base("Pets")
         {
             FirstName = firstName;
             LastName = lastName;
